@@ -13,3 +13,4 @@ string path = "CatFacts.txt";
 
 var fact = await catFactService.GetCatFactAsync();
 await File.AppendAllTextAsync(path, fact + Environment.NewLine);
+Console.WriteLine($"Cat fact saved to {path}");
