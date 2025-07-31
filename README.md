@@ -10,6 +10,7 @@ CatFactsChecker to prosty projekt w .NET, który pobiera losowy fakt o kotach z 
 
 ## Struktura
 
+- `CatFactModel` – model danych reprezentujący fakt o kocie.
 - `ICatFactService` – interfejs serwisu.
 - `CatFactService` – serwis z wykorzystaniem `HttpClient`.
 - `CatFactServiceTests` – testy jednostkowe.
