@@ -17,7 +17,7 @@ public class CatFactService : ICatFactService
     {
         try
         {
-            var response = await _httpClient.GetFromJsonAsync<CatFactModel>("https://catfact.ninsja/fact");
+            var response = await _httpClient.GetFromJsonAsync<CatFactModel>("https://catfact.ninja/fact");
             return response;
         }
         catch (Exception ex)
