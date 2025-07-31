@@ -34,20 +34,22 @@ CatFactsChecker to prosty projekt w .NET, który pobiera losowy fakt o kotach z 
 
 4. **Uruchom aplikację**
    ```bash
-   dotnet run --project CatFact
+   cd CatFact
+   dotnet run
    ```
 
    Fakt o kotach zostanie zapisany do pliku `CatFacts.txt`.
 
 5. **Uruchom testy**
    ```bash
-   dotnet test CatFact.Tests
+   cd ../CatFact.Tests
+   dotnet test
    ```
 
 ## Przykładowy zapis w pliku
 
 ```
-Baking chocolate is the most dangerous chocolate to your cat.
+Cats can predict earthquakes. We humans are not 100% sure how they do it. There are several different theories., Length: 111
 ```
 
 ## Technologie
