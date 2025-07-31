@@ -26,7 +26,7 @@ internal class Program
         }
         else
         {
-            await File.AppendAllTextAsync(outputPath, $"{fact?.Fact}, Length: {fact?.Length}{Environment.NewLine}");
+            await File.AppendAllTextAsync(outputPath, $"{fact?.Fact} - Length: {fact?.Length}{Environment.NewLine}");
             Console.WriteLine($"Cat fact saved to {outputPath}");
         }
     }
