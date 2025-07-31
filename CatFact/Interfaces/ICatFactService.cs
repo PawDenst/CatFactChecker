@@ -1,6 +1,9 @@
-﻿namespace CatFactsApp.Interfaces;
+﻿using CatFact.Models;
+using System.Threading.Tasks;
+
+namespace CatFact.Interfaces;
 
 public interface ICatFactService
 {
-    Task<string> GetCatFactAsync();
+    Task<CatFactModel?> GetCatFactAsync();
 }

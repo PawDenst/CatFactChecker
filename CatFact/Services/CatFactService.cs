@@ -1,7 +1,8 @@
-﻿using CatFactsApp.Interfaces;
+﻿using CatFact.Interfaces;
+using CatFact.Models;
 using System.Net.Http.Json;
 
-namespace CatFactsApp.Services;
+namespace CatFact.Services;
 
 public class CatFactService : ICatFactService
 {
@@ -12,22 +13,16 @@ public class CatFactService : ICatFactService
         _httpClient = httpClient;
     }
 
-    public async Task<string> GetCatFactAsync()
+    public async Task<CatFactModel?> GetCatFactAsync()
     {
         try
         {
-            var response = await _httpClient.GetFromJsonAsync<CatFact>("https://catfact.ninja/fact");
-            return response?.Fact ?? "No Data.";
+            var response = await _httpClient.GetFromJsonAsync<CatFactModel>("https://catfact.ninsja/fact");
+            return response;
         }
         catch (Exception ex)
         {
-            return $"Error downloading fact: {ex.Message}";
+            return new CatFactModel { ErrorMessage = ex.Message };
         }
-    }
-
-    private class CatFact
-    {
-        public string? Fact { get; set; }
-        public int Length { get; set; }
     }
 }

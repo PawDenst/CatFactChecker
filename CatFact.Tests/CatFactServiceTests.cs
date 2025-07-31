@@ -1,13 +1,9 @@
-﻿using CatFactsApp.Interfaces;
-using CatFactsApp.Services;
+﻿using CatFact.Interfaces;
+using CatFact.Services;
 using Moq;
 using Moq.Protected;
 using System.Net;
-using System.Net.Http;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Xunit;
 
 public class CatFactServiceTests
 {
@@ -33,11 +29,13 @@ public class CatFactServiceTests
     [Fact]
     public async Task GetCatFactAsync_ValidJson()
     {
-        var httpClient = CreateHttpClientWithResponse("{\"fact\": \"Baking chocolate is the most dangerous chocolate to yourcat.\", \"length\": 61}");
+        var httpClient = CreateHttpClientWithResponse("{\"fact\": \"Baking chocolate is the most dangerous chocolate to your cat.\", \"length\": 61}");
         var service = new CatFactService(httpClient);
         var fact = await service.GetCatFactAsync();
 
-        Assert.Equal("Baking chocolate is the most dangerous chocolate to yourcat.", fact);
+        Assert.NotNull(fact);
+        Assert.Equal("Baking chocolate is the most dangerous chocolate to your cat.", fact.Fact);
+        Assert.Equal(61, fact.Length);
     }
 
     [Fact]
@@ -47,6 +45,8 @@ public class CatFactServiceTests
         var service = new CatFactService(httpClient);
         var fact = await service.GetCatFactAsync();
 
-        Assert.Equal("No Data.", fact);
+        Assert.NotNull(fact);
+        Assert.Null(fact.Fact);
+        Assert.Equal(0, fact.Length);
     }
 }
