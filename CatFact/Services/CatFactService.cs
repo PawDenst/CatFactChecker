@@ -14,8 +14,15 @@ public class CatFactService : ICatFactService
 
     public async Task<string> GetCatFactAsync()
     {
-        var response = await _httpClient.GetFromJsonAsync<CatFact>("https://catfact.ninja/fact");
-        return response?.Fact ?? "No Data.";
+        try
+        {
+            var response = await _httpClient.GetFromJsonAsync<CatFact>("https://catfact.ninja/fact");
+            return response?.Fact ?? "No Data.";
+        }
+        catch (Exception ex)
+        {
+            return $"Error downloading fact: {ex.Message}";
+        }
     }
 
     private class CatFact
