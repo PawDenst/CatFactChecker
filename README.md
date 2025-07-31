@@ -50,7 +50,7 @@ CatFactsChecker to prosty projekt w .NET, który pobiera losowy fakt o kotach z 
 ## Przykładowy zapis w pliku
 
 ```
-Cats can predict earthquakes. We humans are not 100% sure how they do it. There are several different theories., Length: 111
+Ailurophile is the word cat lovers are officially called. - Length: 57
 ```
 
 ## Technologie
