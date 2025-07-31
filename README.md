@@ -17,7 +17,7 @@ CatFactsChecker to prosty projekt w .NET, który pobiera losowy fakt o kotach z 
 
 ##  Instalacja i uruchomienie
 
-1. **Klonuj repozytorium**
+1. **Sklonuj repozytorium**
    ```bash
    git clone https://github.com/PawDenst/CatFactChecker.git
     ```
